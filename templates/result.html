@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Результат</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<div class="result-card">
+
+<h1>Результат тестирования</h1>
+
+<!-- 👤 Имя -->
+<p class="username">👤 {{ name }}</p>
+
+<!-- 📊 Процент -->
+<div class="score-circle">
+    {{ percent }}%
+</div>
+
+<div class="result-details">
+
+    <div class="detail-box">
+        <h3>Баллы</h3>
+        <p>{{ score }} / 7</p>
+    </div>
+
+    <!-- 🎓 Цвет оценки меняется -->
+    <div class="detail-box">
+        <h3>Оценка</h3>
+        <p class="
+        {% if percent >= 90 %}grade-excellent
+        {% elif percent >= 70 %}grade-good
+        {% elif percent >= 50 %}grade-normal
+        {% else %}grade-bad
+        {% endif %}
+        ">
+        {{ grade }}
+        </p>
+    </div>
+
+    <div class="detail-box">
+        <h3>Время</h3>
+        <p>{{ time_spent }}</p>
+    </div>
+
+</div>
+
+<!-- 🎓 Кнопки -->
+<div class="result-buttons">
+    <a href="/certificate/{{ name }}" class="btn-primary">🎓 Скачать сертификат</a>
+    <a href="/leaderboard" class="btn-secondary">🏆 Таблица лидеров</a>
+    <a href="/" class="btn-light">🔄 Пройти снова</a>
+</div>
+
+</div>
+
+<script>
+// 🎉 Конфетти при 100%
+if({{ percent }}===100){
+const canvas=document.getElementById("confetti");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let pieces=[];
+for(let i=0;i<200;i++){
+pieces.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height-canvas.height,
+size:Math.random()*10+5,
+speed:Math.random()*4+2,
+color:`hsl(${Math.random()*360},100%,60%)`,
+rotation:Math.random()*360
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+pieces.forEach(p=>{
+p.y+=p.speed;
+p.rotation+=5;
+
+ctx.save();
+ctx.translate(p.x,p.y);
+ctx.rotate(p.rotation*Math.PI/180);
+ctx.fillStyle=p.color;
+ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
+ctx.restore();
+});
+requestAnimationFrame(draw);
+}
+draw();
+}
+</script>
+
+</body>
+</html>

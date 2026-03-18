@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+<h1>Таблица лидеров</h1>
+
+<table>
+<tr>
+<th>Имя</th>
+<th>Баллы</th>
+<th>%</th>
+<th>Оценка</th>
+<th>Время</th>
+<th>Дата</th>
+</tr>
+
+{% for r in results %}
+<tr>
+<td>{{ r.name }}</td>
+<td>{{ r.score }}</td>
+<td>{{ r.percent }}%</td>
+<td>{{ r.grade }}</td>
+<td>{{ r.time_spent }}</td>
+<td>{{ r.date }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/">Назад</a>
+
+</div>
+
+</body>
+</html>
