@@ -13,7 +13,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # ================= DATABASE =================
-DATABASE_URL = "sqlite:///./database.db"
+DATABASE_URL = "sqlite:///./simulator_work.db"
 
 engine = create_engine(
     DATABASE_URL,
