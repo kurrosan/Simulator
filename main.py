@@ -13,7 +13,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # ================= DATABASE =================
-DATABASE_URL = "sqlite:///./simulator_work.db"
+DATABASE_URL = "sqlite:///./simulator_work1.db"
 
 engine = create_engine(
     DATABASE_URL,
@@ -49,6 +49,10 @@ def get_db():
     finally:
         db.close()
 
+# ================= AUTH =================
+ADMIN_LOGIN = "admin"
+ADMIN_PASSWORD = "1234"
+
 # ================= HOME =================
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request, db: Session = Depends(get_db)):
@@ -59,7 +63,21 @@ async def home(request: Request, db: Session = Depends(get_db)):
         {"request": request, "tests": tests, "is_admin": is_admin}
     )
 
+# ================= LOGIN =================
+@app.get("/login", response_class=HTMLResponse)
+async def login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
 
+@app.post("/login")
+async def login(request: Request, login: str = Form(...), password: str = Form(...)):
+    if login == ADMIN_LOGIN and password == ADMIN_PASSWORD:
+        request.session["admin"] = True
+    return RedirectResponse("/", status_code=303)
+
+@app.get("/logout")
+async def logout(request: Request):
+    request.session.clear()
+    return RedirectResponse("/", status_code=303)
 
 # ================= CREATE / EDIT / DELETE TEST =================
 @app.get("/create-test", response_class=HTMLResponse)
