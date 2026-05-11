@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Тест: Сборка ПК</title>
+<title>Тест: Знание платформы 1С</title>
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 
 <div class="start-screen">
 <h1>Тест</h1>
-<p>Изучение порядка сборки ПК</p>
+<p>Знание платформы 1С</p>
 
 <input type="text" id="username" placeholder="Введите ваше имя" required>
 <button onclick="startQuiz()">НАЧАТЬ</button>
@@ -49,65 +49,49 @@
 
 <!-- Вопрос 1 -->
 <div class="question active">
-<h3>1. Какой компонент обычно устанавливают первым при сборке ПК?</h3>
-<label><input type="radio" name="q1" value="b"> Процессор (CPU)</label>
-<label><input type="radio" name="q1" value="a"> Оперативную память (RAM)</label>
-<label><input type="radio" name="q1" value="c"> Видеокарту (GPU)</label>
-<label><input type="radio" name="q1" value="d"> Жесткий диск (HDD/SSD)</label>
+<h3>1. Для чего используется платформа 1С?</h3>
+<label><input type="radio" name="q1" value="b"> Для автоматизации бизнеса и учета</label>
+<label><input type="radio" name="q1" value="a"> Для монтажа видео</label>
+<label><input type="radio" name="q1" value="c"> Для создания игр</label>
+<label><input type="radio" name="q1" value="d"> Для обработки фотографий</label>
 <div class="nav-buttons"><button type="button" class="next" disabled>Далее</button></div>
 </div>
 
 <!-- Вопрос 2 -->
 <div class="question">
-<h3>2. Для правильного подключения процессора к материнской плате необходимо:</h3>
-<label><input type="radio" name="q2" value="b"> Совместить ключи и аккуратно вставить процессор в сокет</label>
-<label><input type="radio" name="q2" value="a"> Подать питание на материнскую плату</label>
-<label><input type="radio" name="q2" value="c"> Установить сразу систему охлаждения</label>
-<label><input type="radio" name="q2" value="d"> Подключить все кабели SATA</label>
+<h3>2. Как называется объект в 1С для хранения информации о товарах, клиентах или сотрудниках?</h3>
+<label><input type="radio" name="q2" value="b"> Справочник</label>
+<label><input type="radio" name="q2" value="a"> Отчет</label>
+<label><input type="radio" name="q2" value="c"> Макет</label>
+<label><input type="radio" name="q2" value="d"> Интерфейс</label>
 <div class="nav-buttons"><button type="button" class="prev">Назад</button><button type="button" class="next" disabled>Далее</button></div>
 </div>
 
 <!-- Вопрос 3 -->
 <div class="question">
-<h3>3. Какой из компонентов требует термопасты?</h3>
-<label><input type="radio" name="q3" value="b"> Процессор</label>
-<label><input type="radio" name="q3" value="a"> Оперативная память</label>
-<label><input type="radio" name="q3" value="c"> Видеокарта</label>
-<label><input type="radio" name="q3" value="d"> Жесткий диск</label>
+<h3>3. Какой объект в 1С используется для оформления хозяйственных операций?</h3>
+<label><input type="radio" name="q3" value="b"> Документ</label>
+<label><input type="radio" name="q3" value="a"> Константа</label>
+<label><input type="radio" name="q3" value="c"> План счетов</label>
+<label><input type="radio" name="q3" value="d"> Роль</label>
 <div class="nav-buttons"><button type="button" class="prev">Назад</button><button type="button" class="next" disabled>Далее</button></div>
 </div>
 
 <!-- Вопрос 4 -->
 <div class="question">
-<h3>4. Основной разъем для подключения блока питания к материнской плате называется:</h3>
-<label><input type="radio" name="q4" value="c"> ATX 24-pin</label>
-<label><input type="radio" name="q4" value="a"> SATA</label>
-<label><input type="radio" name="q4" value="b"> PCIe</label>
-<label><input type="radio" name="q4" value="d"> USB</label>
+<h3>4. Что используется в 1С для получения данных из базы?</h3>
+<label><input type="radio" name="q4" value="c"> Запрос</label>
+<label><input type="radio" name="q4" value="a"> Таблица Excel</label>
+<label><input type="radio" name="q4" value="b"> Архив</label>
+<label><input type="radio" name="q4" value="d"> Браузер</label>
 <div class="nav-buttons"><button type="button" class="prev">Назад</button><button type="button" class="next" disabled>Далее</button></div>
 </div>
 
 <!-- Вопрос 5 -->
 <div class="question">
-<h3>5. Можно ли подключить видеокарту к блоку питания без установки в слот материнской платы?</h3>
-<label><input type="radio" name="q5" value="false"> Нет</label>
+<h3>5. Можно ли в 1С создавать отчеты для анализа данных?</h3>
 <label><input type="radio" name="q5" value="true"> Да</label>
-<div class="nav-buttons"><button type="button" class="prev">Назад</button><button type="button" class="next" disabled>Далее</button></div>
-</div>
-
-<!-- Вопрос 6 -->
-<div class="question">
-<h3>6. Кабели питания и данные для накопителей SATA подключаются после установки всех компонентов?</h3>
-<label><input type="radio" name="q6" value="true"> Да</label>
-<label><input type="radio" name="q6" value="false"> Нет</label>
-<div class="nav-buttons"><button type="button" class="prev">Назад</button><button type="button" class="next" disabled>Далее</button></div>
-</div>
-
-<!-- Вопрос 7 -->
-<div class="question">
-<h3>7. Использование антистатического браслета защищает компоненты ПК?</h3>
-<label><input type="radio" name="q7" value="true"> Да</label>
-<label><input type="radio" name="q7" value="false"> Нет</label>
+<label><input type="radio" name="q5" value="false"> Нет</label>
 <div class="nav-buttons">
 <button type="button" class="prev">Назад</button>
 <button type="button" id="finishBtn" disabled onclick="finishQuiz()">Завершить</button>
