@@ -158,7 +158,7 @@ function check(){
         let checked = active.querySelector("input[type='radio']:checked")
         if(next) next.disabled = !checked
         // включаем finishBtn если выбран ответ на q7
-        if(active.querySelector("input[name='q7']")){
+        if(active.querySelector("input[name='q5']")){
             finishBtn.disabled = !checked
         }
     }
