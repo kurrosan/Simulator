@@ -141,7 +141,7 @@ async def submit_test(request: Request, db: Session = Depends(get_db)):
     if form.get("q6") == "true": score += 1
     if form.get("q7") == "true": score += 1
 
-    percent = int((score / 7) * 100)
+    percent = int((score / 5) * 100)
 
     if percent >= 90:
         grade = "Отлично"
